@@ -1,0 +1,27 @@
+{
+  "clients": {
+    "stan": {
+      "client": "aggregate-api-0",
+      "cluster": "test-cluster",
+      "opts": {
+        "maxPubAcksInflight": 1,
+        "maxReconnectAttempts": -1,
+        "reconnect": true,
+        "reconnectTimeWait": 5000,
+        "uri": "STAN_URI",
+        "waitOnFirstConnect": true
+      }
+    }
+  },
+  "databases": {
+    "nedb": {
+      "autocompactionInterval": 1380000,
+      "paginate": {
+        "default": 20,
+        "max": 2000
+      },
+      "path": "/data/db"
+    }
+  },
+  "port": 8080
+}

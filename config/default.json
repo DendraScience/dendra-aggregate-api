@@ -1,0 +1,44 @@
+{
+  "clients": {
+    "stan": {
+      "client": "aggregate-api-0",
+      "cluster": "test-cluster",
+      "opts": {
+        "maxPubAcksInflight": 1,
+        "maxReconnectAttempts": -1,
+        "reconnect": true,
+        "reconnectTimeWait": 5000,
+        "uri": "http://localhost:4222",
+        "waitOnFirstConnect": true
+      }
+    }
+  },
+  "databases": {
+    "nedb": {
+      "autocompactionInterval": 60000,
+      "paginate": {
+        "default": 20,
+        "max": 2000
+      },
+      "path": "../.data"
+    }
+  },
+  "host": "localhost",
+  "port": 3034,
+  "tasks": {
+    "dispatch": {
+      "requestSubject": "dendra.aggregateBuild.v1.req",
+      "timerSeconds": [
+        10,
+        15
+      ]
+    },
+    "grooming": {
+      "docLimit": 20,
+      "timerSeconds": [
+        40,
+        50
+      ]
+    }
+  }
+}
