@@ -1,7 +1,7 @@
 {
   "clients": {
     "stan": {
-      "client": "aggregate-api-0",
+      "client": "aggregate-api",
       "cluster": "test-cluster",
       "opts": {
         "maxPubAcksInflight": 1,

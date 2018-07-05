@@ -1,10 +1,10 @@
 {
   "clients": {
     "stan": {
-      "client": "aggregate-api-0",
+      "client": "STAN_CLIENT",
       "cluster": "test-cluster",
       "opts": {
-        "maxPubAcksInflight": 1,
+        "maxPubAcksInflight": "STAN_MAX_PUB_ACKS_IN_FLIGHT",
         "maxReconnectAttempts": -1,
         "reconnect": true,
         "reconnectTimeWait": 5000,
