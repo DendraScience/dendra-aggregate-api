@@ -5,11 +5,7 @@
       "cluster": "test-cluster",
       "opts": {
         "maxPubAcksInflight": "STAN_MAX_PUB_ACKS_IN_FLIGHT",
-        "maxReconnectAttempts": -1,
-        "reconnect": true,
-        "reconnectTimeWait": 5000,
-        "uri": "STAN_URI",
-        "waitOnFirstConnect": true
+        "uri": "STAN_URI"
       }
     }
   },

@@ -39,20 +39,24 @@ after(async function () {
   this.timeout(120000)
 
   const {instance: stan} = app.get('clients').stan
-  await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      stan.removeAllListeners()
-      stan.once('close', resolve)
-      stan.once('error', reject)
-      stan.close()
-    }, 3000)
-  })
+
+  if (stan) {
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        stan.removeAllListeners()
+        stan.once('close', resolve)
+        stan.once('error', reject)
+        stan.close()
+      }, 3000)
+    })
+  }
 
   const tasks = app.get('tasks')
   await new Promise(resolve => {
     setTimeout(() => {
       clearTimeout(tasks.dispatch.tid)
       clearTimeout(tasks.grooming.tid)
+      clearTimeout(tasks.stan.tid)
       resolve()
     }, 3000)
   })

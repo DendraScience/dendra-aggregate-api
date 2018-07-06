@@ -17,7 +17,7 @@ module.exports = function (app) {
   if (!(config && config.requestSubject && clients && clients.stan)) return;
 
   const { requestSubject } = config;
-  const { instance: stan } = clients.stan;
+  const { stan } = clients;
 
   const handleError = err => {
     logger.error(err);
@@ -58,7 +58,7 @@ module.exports = function (app) {
       const msgStr = JSON.stringify(aggregate);
 
       await new Promise((resolve, reject) => {
-        stan.publish(requestSubject, msgStr, (err, guid) => err ? reject(err) : resolve(guid));
+        stan.instance.publish(requestSubject, msgStr, (err, guid) => err ? reject(err) : resolve(guid));
       });
 
       logger.info(`Task [${TASK_NAME}]: Published request to '${requestSubject}'`);
@@ -90,6 +90,11 @@ module.exports = function (app) {
 
   const runTask = async () => {
     logger.info(`Task [${TASK_NAME}]: Running...`);
+
+    if (!stan.isConnected) {
+      logger.info(`Task [${TASK_NAME}]: NATS Streaming not connected`);
+      return;
+    }
 
     await processAggregates(new Date());
 

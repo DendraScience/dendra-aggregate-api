@@ -5,11 +5,7 @@
       "cluster": "test-cluster",
       "opts": {
         "maxPubAcksInflight": 1,
-        "maxReconnectAttempts": -1,
-        "reconnect": true,
-        "reconnectTimeWait": 5000,
-        "uri": "http://localhost:4222",
-        "waitOnFirstConnect": true
+        "uri": "http://localhost:4222"
       }
     }
   },
@@ -36,8 +32,14 @@
     "grooming": {
       "docLimit": 20,
       "timerSeconds": [
-        40,
-        50
+        50,
+        60
+      ]
+    },
+    "stan": {
+      "timerSeconds": [
+        30,
+        40
       ]
     }
   }

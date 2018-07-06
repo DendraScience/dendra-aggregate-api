@@ -1,6 +1,6 @@
 {
   "name": "dendra-aggregate-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dendra API for dispatching data aggregate calculations.",
   "license": "BSD-2-Clause-FreeBSD",
   "author": "J. Scott Smith <scott@newleafsolutionsinc.com>",

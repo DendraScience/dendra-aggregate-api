@@ -15,7 +15,6 @@ const configuration = require('@feathersjs/configuration')
 const express = require('@feathersjs/express')
 const socketio = require('@feathersjs/socketio')
 
-const clients = require('./clients')
 const databases = require('./databases')
 const middleware = require('./middleware')
 const services = require('./services')
@@ -29,7 +28,6 @@ module.exports = async (logger) => {
   // Configure
   app.configure(configuration())
 
-  await clients(app)
   await databases(app)
 
   // Feathers setup
