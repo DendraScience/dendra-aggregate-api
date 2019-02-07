@@ -1,5 +1,5 @@
 /**
- * Aggregate API utilities and helpers.
+ * Build API utilities and helpers.
  *
  * @author J. Scott Smith
  * @license BSD-2-Clause-FreeBSD
@@ -17,7 +17,7 @@ function asyncHashDigest (data, algorithm = 'sha1', encoding = 'hex') {
   })
 }
 
-function configTimerSeconds ({timerSeconds}) {
+function configTimerSeconds ({ timerSeconds }) {
   let s = 60
 
   if (typeof timerSeconds === 'number') {

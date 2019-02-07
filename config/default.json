@@ -1,7 +1,7 @@
 {
   "clients": {
     "stan": {
-      "client": "aggregate-api",
+      "client": "build-api",
       "cluster": "test-cluster",
       "opts": {
         "maxPubAcksInflight": 1,
@@ -23,7 +23,7 @@
   "port": 3034,
   "tasks": {
     "dispatch": {
-      "requestSubject": "dendra.aggregateBuild.v1.req",
+      "requestSubject": "dendra.build.v1.req",
       "timerSeconds": [
         10,
         15

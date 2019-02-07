@@ -19,8 +19,8 @@ module.exports = function (app) {
     logger.error(err);
   };
 
-  const processAggregates = async now => {
-    const service = app.service('/aggregates');
+  const processBuilds = async now => {
+    const service = app.service('/builds');
     const query = {
       expires_at: { $lte: now },
       $limit: docLimit,
@@ -32,28 +32,28 @@ module.exports = function (app) {
     const res = await service.find({ query });
 
     if (!(res && res.data && res.data.length > 0)) {
-      logger.info(`Task [${TASK_NAME}]: No aggregates found`);
+      logger.info(`Task [${TASK_NAME}]: No builds found`);
       return;
     }
 
-    for (let aggregate of res.data) {
-      logger.info(`Task [${TASK_NAME}]: Removing aggregate ${aggregate._id}`);
-      await service.remove(aggregate._id);
+    for (let build of res.data) {
+      logger.info(`Task [${TASK_NAME}]: Removing build ${build._id}`);
+      await service.remove(build._id);
     }
 
     // DEPRECATED: Now using autocompactionInterval in config
-    // // Compact database if aggregates were removed
+    // // Compact database if builds were removed
     // const {nedb} = databases
     // if (nedb && nedb.db) {
-    //   logger.info(`Task [${TASK_NAME}]: Queuing aggregates compaction`)
-    //   nedb.db.aggregates.persistence.compactDatafile()
+    //   logger.info(`Task [${TASK_NAME}]: Queuing builds compaction`)
+    //   nedb.db.builds.persistence.compactDatafile()
     // }
   };
 
   const runTask = async () => {
     logger.info(`Task [${TASK_NAME}]: Running...`);
 
-    await processAggregates(new Date());
+    await processBuilds(new Date());
 
     // NOTE: Add additional grooming steps here
   };

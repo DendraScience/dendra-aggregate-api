@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Aggregate API app.
+ * Build API app.
  *
  * @author J. Scott Smith
  * @license BSD-2-Clause-FreeBSD

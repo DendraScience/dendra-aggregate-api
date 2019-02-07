@@ -10,13 +10,13 @@ module.exports = function (app) {
 
   const { db, paginate } = databases.nedb;
 
-  app.use('/aggregates', service({
-    Model: db.aggregates,
+  app.use('/builds', service({
+    Model: db.builds,
     paginate
   }));
 
   // Get the wrapped service object, bind hooks
-  const aggregateService = app.service('/aggregates');
+  const buildService = app.service('/builds');
 
-  aggregateService.hooks(hooks);
+  buildService.hooks(hooks);
 };

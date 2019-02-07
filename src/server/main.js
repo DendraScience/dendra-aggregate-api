@@ -1,5 +1,5 @@
 /**
- * Aggregate API entry point.
+ * Build API entry point.
  *
  * @author J. Scott Smith
  * @license BSD-2-Clause-FreeBSD

@@ -38,7 +38,7 @@ before(async function () {
 after(async function () {
   this.timeout(120000)
 
-  const {instance: stan} = app.get('clients').stan
+  const { instance: stan } = app.get('clients').stan
 
   if (stan) {
     await new Promise((resolve, reject) => {
@@ -62,7 +62,7 @@ after(async function () {
   })
 
   const nedb = app.get('databases').nedb
-  nedb.db.aggregates.persistence.stopAutocompaction()
+  nedb.db.builds.persistence.stopAutocompaction()
 
   await new Promise((resolve, reject) => server.close(err => err ? reject(err) : resolve()))
   server.unref()

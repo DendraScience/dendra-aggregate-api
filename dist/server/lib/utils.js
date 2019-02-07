@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Aggregate API utilities and helpers.
+ * Build API utilities and helpers.
  *
  * @author J. Scott Smith
  * @license BSD-2-Clause-FreeBSD

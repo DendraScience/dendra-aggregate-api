@@ -17,20 +17,20 @@ module.exports = async (app) => {
     if (err.code !== 'EEXIST') throw err
   }
 
-  const filename = path.join(nedbPath, 'aggregates.db')
-  const aggregates = new Datastore({
+  const filename = path.join(nedbPath, 'builds.db')
+  const builds = new Datastore({
     filename,
     autoload: true
   })
 
   if (autocompactionInterval > 0) {
-    aggregates.persistence.setAutocompactionInterval(autocompactionInterval)
+    builds.persistence.setAutocompactionInterval(autocompactionInterval)
   }
-  aggregates.on('compaction.done', () => {
+  builds.on('compaction.done', () => {
     app.logger.info(`Compacted ${filename}`)
   })
 
   nedb.db = {
-    aggregates
+    builds
   }
 }

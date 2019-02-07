@@ -7,7 +7,9 @@ module.exports = {
   extends: 'standard',
   globals: {
     assert: true,
+    baseUrl: true,
     expect: true,
+    guest: true,
     helper: true,
     app: true,
     path: true

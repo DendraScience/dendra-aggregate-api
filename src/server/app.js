@@ -1,5 +1,5 @@
 /**
- * Aggregate API app.
+ * Build API app.
  *
  * @author J. Scott Smith
  * @license BSD-2-Clause-FreeBSD
@@ -35,7 +35,7 @@ module.exports = async (logger) => {
   app.use(helmet())
   app.use(compress())
   app.use(express.json())
-  app.use(express.urlencoded({extended: true}))
+  app.use(express.urlencoded({ extended: true }))
 
   app.configure(express.rest())
   app.configure(socketio())
@@ -44,7 +44,7 @@ module.exports = async (logger) => {
   app.configure(tasks)
 
   app.use(express.notFound())
-  app.use(express.errorHandler({logger}))
+  app.use(express.errorHandler({ logger }))
 
   return app
 }

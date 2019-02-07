@@ -1,10 +1,10 @@
 const STAN = require('node-nats-streaming')
-const {configTimerSeconds} = require('../../lib/utils')
+const { configTimerSeconds } = require('../../lib/utils')
 
 const TASK_NAME = 'stan'
 
 module.exports = function (app) {
-  const {logger} = app
+  const { logger } = app
   const clients = app.get('clients')
   const tasks = app.get('tasks') || {}
 
@@ -15,7 +15,7 @@ module.exports = function (app) {
     clients && clients.stan
   )) return
 
-  const {stan} = clients
+  const { stan } = clients
 
   const handleError = (err) => {
     logger.error(err)
