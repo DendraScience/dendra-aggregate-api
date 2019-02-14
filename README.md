@@ -1,6 +1,6 @@
 # Dendra Build API
 
-A dispatcher service that publishes build requests to a worker queue. Used to generate annotation side-effects and aggregate calculations. Built using [Feathers](https://feathersjs.com).
+A service for scheduling and dispatching build requests. Used to kick-off annotation side-effects and data aggregate calculations. Built using [Feathers](https://feathersjs.com).
 
 
 ## Instructions

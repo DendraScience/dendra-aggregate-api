@@ -1,9 +1,11 @@
-'use strict';
+"use strict";
 
 const Datastore = require('nedb');
 
 const fs = require('fs');
+
 const path = require('path');
+
 const util = require('util');
 
 const mkdir = util.promisify(fs.mkdir);
@@ -28,10 +30,10 @@ module.exports = async app => {
   if (autocompactionInterval > 0) {
     builds.persistence.setAutocompactionInterval(autocompactionInterval);
   }
+
   builds.on('compaction.done', () => {
     app.logger.info(`Compacted ${filename}`);
   });
-
   nedb.db = {
     builds
   };

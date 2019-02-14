@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Build API utilities and helpers.
@@ -7,8 +7,8 @@
  * @license BSD-2-Clause-FreeBSD
  * @module lib/utils
  */
-
 const crypto = require('crypto');
+
 const random = require('lodash/random');
 
 function asyncHashDigest(data, algorithm = 'sha1', encoding = 'hex') {
@@ -19,7 +19,9 @@ function asyncHashDigest(data, algorithm = 'sha1', encoding = 'hex') {
   });
 }
 
-function configTimerSeconds({ timerSeconds }) {
+function configTimerSeconds({
+  timerSeconds
+}) {
   let s = 60;
 
   if (typeof timerSeconds === 'number') {
