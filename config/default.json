@@ -4,7 +4,6 @@
       "client": "build-api",
       "cluster": "test-cluster",
       "opts": {
-        "maxPubAcksInflight": 1,
         "uri": "http://localhost:4222"
       }
     }

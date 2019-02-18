@@ -4,7 +4,6 @@
       "client": "STAN_CLIENT",
       "cluster": "test-cluster",
       "opts": {
-        "maxPubAcksInflight": "STAN_MAX_PUB_ACKS_IN_FLIGHT",
         "uri": "STAN_URI"
       }
     }

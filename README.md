@@ -5,7 +5,7 @@ A service for scheduling and dispatching build requests. Used to kick-off annota
 
 ## Instructions
 
-1. Be sure you have Node version 10.14.2. If you’re using nvm, you may need to `nvm use 10.14.2`.
+1. Be sure you have Node version 10.15.1. If you’re using nvm, you may need to `nvm use 10.15.1`.
 
 2. Clone this repo.
 
