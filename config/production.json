@@ -18,5 +18,10 @@
       "path": "/data/db"
     }
   },
-  "port": 8080
+  "port": 8080,
+  "tasks": {
+    "dispatch": {
+      "requestSubject": "DISPATCH_REQUEST_SUBJECT"
+    }
+  }
 }
